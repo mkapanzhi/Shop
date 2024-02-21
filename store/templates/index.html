@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="header">
+    <div class="logo_img">
+        <img src="{% static 'img/logo.png' %}" alt="">
+    </div>
+    {% block name %}
+    <div class="Shop">
+        <p>Мой магазин</p>
+    </div>
+    {% endblock %}
+    <div class="phone_number">
+        <p>+37529-111-11-11</p>
+        <p>+37529-222-22-22</p>
+        <p>+37529-333-33-33</p>
+    </div>
+</div>
+<div class="navigate">
+    {% block johan %}
+    {% for store in stores %}
+    <a href="#" class="navigate_name">{{store}}</a>
+    {% endfor %}
+    {% endblock %}
+</div>
+<div class="main">
+    {% block content %}
+    {% for product in products %}
+    <a href="{% url 'desc' product.id %}" class="card_link">
+    <div class="card">
+        <h3>{{ product.name }}</h3>
+        <p>
+            {{product.price}}
+        </p>
+        <div class="card_img">
+            <img src="{{product.image.url}}" alt="">
+        </div>
+    </div>
+        </a>
+    {% endfor %}
+    {% endblock %}
+</div>
+
+
+</body>
+</html>
