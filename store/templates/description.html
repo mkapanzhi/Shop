@@ -2,10 +2,14 @@
 
 {% block name %}
 <div class="Shop">
-    <a href="http://127.0.0.1:8000/">Мой магазин</a>
+    <a href="{% url 'home' %}">Мой магазин</a>
 </div>
 {% endblock %}
 
 {% block content %}
+<h1>{{ products.name }}</h1>
 <h1>{{ products.description }}</h1>
+<div class="card_img">
+<img src="{{ products.image.url }}">
+</div>
 {% endblock %}
