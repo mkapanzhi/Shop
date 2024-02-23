@@ -23,10 +23,15 @@ def get_add_product_page(request):
     products = Product.objects.all()
     form = AddProductForm()
     if request.method == 'POST':
-        form = AddProductForm(request.POST)
+        form = AddProductForm(request.POST, request.FILES)
         if form.is_valid():
+            print(form.cleaned_data)
+            colors = form.cleaned_data.pop('colors')
+
+            print(form.cleaned_data)
             new_product = Product(**form.cleaned_data)
             new_product.save()
+            new_product.colors.set(colors) # устанавливаем связь между полями
             return redirect('home')
         else:
             print(form.errors)
@@ -40,11 +45,10 @@ def get_add_product_page(request):
 
 
 def get_description_page(request, id):
-    stores = Store.objects.all()
     products = Product.objects.get(id=id)
+    print(products.colors.all())
 
     context = {
-        'stores': stores,
         'products': products
     }
     return render(request, 'description.html', context)

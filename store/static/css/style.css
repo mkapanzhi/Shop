@@ -10,6 +10,7 @@
     height: 50px;
     background: darkorange;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 10px
 
@@ -63,4 +64,13 @@
 .card_link {
     text_decoration: none;
     color: blank;
+}
+
+.navigate_store {
+    display: flex;
+    gap: 10px;
+}
+
+.navigate_add {
+    display: flex;
 }

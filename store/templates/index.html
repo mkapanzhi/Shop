@@ -24,25 +24,30 @@
 </div>
 <div class="navigate">
     {% block johan %}
-    {% for store in stores %}
-    <a href="#" class="navigate_name">{{store}}</a>
-    {% endfor %}
+    <div class="navigate_store">
+        {% for store in stores %}
+        <a href="#" class="navigate_name">{{store}}</a>
+        {% endfor %}
+    </div>
+    <div class="navigate_add">
+        <a href="{% url 'add_product' %}">Add product</a>
+    </div>
     {% endblock %}
 </div>
 <div class="main">
     {% block content %}
     {% for product in products %}
     <a href="{% url 'desc' product.id %}" class="card_link">
-    <div class="card">
-        <h3>{{ product.name }}</h3>
-        <p>
-            {{product.price}}
-        </p>
-        <div class="card_img">
-            <img src="{{product.image.url}}" alt="">
+        <div class="card">
+            <h3>{{ product.name }}</h3>
+            <p>
+                {{product.price}}
+            </p>
+            <div class="card_img">
+                <img src="{{product.image.url}}" alt="">
+            </div>
         </div>
-    </div>
-        </a>
+    </a>
     {% endfor %}
     {% endblock %}
 </div>

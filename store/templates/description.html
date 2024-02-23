@@ -7,9 +7,18 @@
 {% endblock %}
 
 {% block content %}
-<p>{{ products.name }}</p>
-<p>{{ products.description }}</p>
-<div class="card_img">
-    <img src="{{ products.image.url }}">
-</div>
-{% endblock %}
+<div>
+    <p>{{ products.name }}</p>
+    <p>Цвет: {% for color in  products.colors.all %}
+        <span>{{color}}</span>
+        {% endfor %}</p>
+
+
+    <p>{{ products.description }}</p>
+
+    <div class="card_img">
+        <img src="{{ products.image.url }}">
+    </div>
+    </div>
+
+    {% endblock %}
