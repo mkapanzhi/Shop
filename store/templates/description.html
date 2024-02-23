@@ -7,9 +7,9 @@
 {% endblock %}
 
 {% block content %}
-<h1>{{ products.name }}</h1>
-<h1>{{ products.description }}</h1>
+<p>{{ products.name }}</p>
+<p>{{ products.description }}</p>
 <div class="card_img">
-<img src="{{ products.image.url }}">
+    <img src="{{ products.image.url }}">
 </div>
 {% endblock %}

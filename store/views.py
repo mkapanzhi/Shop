@@ -4,8 +4,6 @@ from .forms import AddProductForm
 from .models import Store, Product
 
 
-# Create your views here.
-
 def get_store_page(request):
     stores = Store.objects.all()
     products = Product.objects.all()
