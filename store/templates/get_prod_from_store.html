@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block name %}
+<div class="Shop">
+    <a href="{% url 'home' %}">Мой магазин</a>
+</div>
+{% endblock %}
+
+{% block content %}
+{%for product in products_by_store%}
+<div class="card">
+    <h3>{{ product.name }}</h3>
+    <p>
+        {{product.price}}
+    </p>
+    <div class="card_img">
+        <img src="{{product.image.url}}" alt="">
+    </div>
+</div>
+</a>
+{% endfor %}
+{% endblock %}
