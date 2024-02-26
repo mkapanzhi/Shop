@@ -23,7 +23,7 @@
     </div>
 </div>
 <div class="navigate">
-    {% block johan %}
+    {% block store_and_add %}
     <div class="navigate_store">
         {% for store in stores %}
         <a href="{% url 'get_product_from_store' store.id %}" class="navigate_name">{{store}}</a>

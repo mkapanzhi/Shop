@@ -41,6 +41,7 @@
 .card_img {
     max-width: 100px;
     max-lenght: 100px;
+
 }
 
 .card_img img {
@@ -58,6 +59,7 @@
     margin-top: 20px;
     width: 200px;
     height: 300px;
+    border-radius: 5%;
 
 }
 

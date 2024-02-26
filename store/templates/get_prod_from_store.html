@@ -6,6 +6,15 @@
 </div>
 {% endblock %}
 
+{% block store_and_add %}
+<div class="navigate_store">
+    <a href="{% url 'home' %}" class="">Home</a>
+</div>
+<div class="navigate_add">
+    <a href="{% url 'add_product' %}">Add product</a>
+</div>
+{% endblock %}
+
 {% block content %}
 {%for product in products_by_store%}
 <div class="card">
