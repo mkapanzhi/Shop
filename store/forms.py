@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Store, ColorProduct, Product
+from .models import Store, ColorProduct
 from .validators import no_numbers_validator
 
 
@@ -12,5 +12,8 @@ class AddProductForm(forms.Form):
     image = forms.ImageField(initial='/defpic.png')
     colors = forms.ModelMultipleChoiceField(queryset=ColorProduct.objects.all())
 
+    def clean_data(self):
+        self.cleaned_data['name'] = 'Johan'
+        return self.cleaned_data
 
 

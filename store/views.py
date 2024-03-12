@@ -58,5 +58,3 @@ def get_product_from_store(request, id):
         'products_by_store': products_by_store
     }
     return render(request, 'get_prod_from_store.html', context)
-
-

@@ -6,4 +6,3 @@ def no_numbers_validator(value):
         raise ValidationError(
             ("Число не должно использоваться в имени")
         )
-    print(value)
